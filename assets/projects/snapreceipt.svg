@@ -1,0 +1,16 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#111827"/>
+  <rect x="420" y="40" width="360" height="595" rx="36" fill="#0f172a" stroke="rgba(255,255,255,0.1)" stroke-width="4"/>
+  <rect x="450" y="90" width="300" height="220" rx="16" fill="rgba(139,92,246,0.2)"/>
+  <rect x="450" y="340" width="300" height="36" rx="8" fill="rgba(255,255,255,0.08)"/>
+  <rect x="450" y="395" width="300" height="36" rx="8" fill="rgba(255,255,255,0.08)"/>
+  <rect x="450" y="450" width="300" height="36" rx="8" fill="rgba(255,255,255,0.08)"/>
+  <rect x="450" y="530" width="300" height="56" rx="28" fill="url(#grad)"/>
+  <defs>
+    <linearGradient id="grad" x1="450" y1="558" x2="750" y2="558" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <text x="60" y="55" fill="#f472b6" font-family="Arial, sans-serif" font-size="28" font-weight="700">SnapReceipt</text>
+</svg>

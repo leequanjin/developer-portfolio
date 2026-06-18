@@ -1,0 +1,26 @@
+:root {
+  --background: #0a0a0f;
+  --background-secondary: #12121a;
+  --foreground: #f4f4f5;
+  --foreground-muted: #a1a1aa;
+  --foreground-subtle: #71717a;
+  --accent-from: #8b5cf6;
+  --accent-to: #06b6d4;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --glass-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(139, 92, 246, 0.08);
+  --font-display: "Outfit", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --container-max: 72rem;
+  --section-padding: 6rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --radius-full: 9999px;
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --nav-height: 4.5rem;
+  --focus-ring: 0 0 0 2px var(--background), 0 0 0 4px var(--accent-from);
+}
