@@ -83,44 +83,6 @@ function renderHero() {
   `;
 }
 
-function renderAbout() {
-  const bio = portfolio.about.bio
-    .map((p) => `<p>${escapeHtml(p)}</p>`)
-    .join("");
-
-  const stats = portfolio.about.stats
-    .map(
-      (stat) => `
-        <div class="glass-card about__stat reveal">
-          <p class="about__stat-value">${escapeHtml(stat.value)}</p>
-          <p class="about__stat-label">${escapeHtml(stat.label)}</p>
-        </div>
-      `,
-    )
-    .join("");
-
-  return `
-    <section id="about" class="section" aria-labelledby="about-title">
-      <div class="section-container">
-        <div class="reveal">
-          ${renderSectionHeader({
-            eyebrow: portfolio.about.eyebrow,
-            title: portfolio.about.title,
-            subtitle: portfolio.about.subtitle,
-          })}
-        </div>
-        <div class="about__grid">
-          <div class="glass-card about__bio reveal reveal--delay-1">${bio}</div>
-          <div class="about__stats">
-            ${stats}
-            <a class="about__skills-link reveal" href="#skills">View full skills →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  `;
-}
-
 function renderProjects() {
   const cards = portfolio.projects.items
     .map((project, index) => {
@@ -151,16 +113,24 @@ function renderProjects() {
             <p class="project-card__description">${escapeHtml(project.description)}</p>
             <div class="project-card__tech">${tech}</div>
             <div class="project-card__actions">
-              <a class="btn btn--secondary" href="${escapeHtml(project.github)}" target="_blank" rel="noopener noreferrer">
+              ${
+                project.github
+                  ? `<a class="btn btn--secondary" href="${escapeHtml(project.github)}" target="_blank" rel="noopener noreferrer">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
                 GitHub
                 <span class="sr-only">(opens in new tab)</span>
-              </a>
-              <a class="btn btn--ghost" href="${escapeHtml(project.demo)}" target="_blank" rel="noopener noreferrer">
+              </a>`
+                  : ""
+              }
+              ${
+                project.demo
+                  ? `<a class="btn btn--ghost" href="${escapeHtml(project.demo)}" target="_blank" rel="noopener noreferrer">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
                 Live Demo
                 <span class="sr-only">(opens in new tab)</span>
-              </a>
+              </a>`
+                  : ""
+              }
             </div>
             <div class="project-card__challenges">
               <p class="project-card__challenges-title">Challenges solved</p>
@@ -177,10 +147,10 @@ function renderProjects() {
       <div class="section-container">
         <div class="reveal">
           ${renderSectionHeader({
-            eyebrow: portfolio.projects.eyebrow,
-            title: portfolio.projects.title,
-            subtitle: portfolio.projects.subtitle,
-          })}
+    eyebrow: portfolio.projects.eyebrow,
+    title: portfolio.projects.title,
+    subtitle: portfolio.projects.subtitle,
+  })}
         </div>
         <div class="projects__grid">${cards}</div>
       </div>
@@ -223,10 +193,10 @@ function renderExperience() {
       <div class="section-container">
         <div class="reveal">
           ${renderSectionHeader({
-            eyebrow: portfolio.experience.eyebrow,
-            title: portfolio.experience.title,
-            subtitle: portfolio.experience.subtitle,
-          })}
+    eyebrow: portfolio.experience.eyebrow,
+    title: portfolio.experience.title,
+    subtitle: portfolio.experience.subtitle,
+  })}
         </div>
         <div class="experience__timeline">${items}</div>
       </div>
@@ -254,10 +224,10 @@ function renderSkills() {
       <div class="section-container">
         <div class="reveal">
           ${renderSectionHeader({
-            eyebrow: portfolio.skills.eyebrow,
-            title: portfolio.skills.title,
-            subtitle: portfolio.skills.subtitle,
-          })}
+    eyebrow: portfolio.skills.eyebrow,
+    title: portfolio.skills.title,
+    subtitle: portfolio.skills.subtitle,
+  })}
         </div>
         <div class="skills__grid">${cards}</div>
       </div>
@@ -278,11 +248,11 @@ function renderResume() {
       <div class="section-container">
         <div class="reveal">
           ${renderSectionHeader({
-            eyebrow: portfolio.resume.eyebrow,
-            title: portfolio.resume.title,
-            subtitle: portfolio.resume.subtitle,
-            center: true,
-          })}
+    eyebrow: portfolio.resume.eyebrow,
+    title: portfolio.resume.title,
+    subtitle: portfolio.resume.subtitle,
+    center: true,
+  })}
         </div>
         <div class="glass-card resume__card reveal reveal--delay-1">
           <p class="resume__summary">${escapeHtml(portfolio.resume.summary)}</p>
@@ -310,11 +280,11 @@ function renderContact() {
       <div class="section-container">
         <div class="reveal">
           ${renderSectionHeader({
-            eyebrow: portfolio.contact.eyebrow,
-            title: portfolio.contact.headline,
-            subtitle: portfolio.contact.message,
-            center: true,
-          })}
+    eyebrow: portfolio.contact.eyebrow,
+    title: portfolio.contact.headline,
+    subtitle: portfolio.contact.message,
+    center: true,
+  })}
         </div>
         <div class="glass-card contact__card reveal reveal--delay-1">
           <p class="contact__label">Best way to reach me</p>
@@ -388,7 +358,6 @@ function renderPage() {
 
     <main id="main-content">
       ${renderHero()}
-      ${renderAbout()}
       ${renderProjects()}
       ${renderExperience()}
       ${renderSkills()}
